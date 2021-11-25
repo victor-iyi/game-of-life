@@ -1,11 +1,11 @@
-import { Universe, Cell } from "game-of-life";
+import { Universe, Cell, RenderOptions } from "game-of-life";
 import { memory } from "game-of-life/game_of_life_bg.wasm";
 
 
 // Rendering options:
-// -- canvas
-// -- text
-const render_options = false;
+// -- Canvas (recommended)
+// -- Text (set when using low memory device)
+const RENDER_OPTIONS = RenderOptions.Canvas;
 
 // Universe represents the universe of cells.
 const universe = Universe.new(64, 64);
@@ -15,14 +15,14 @@ const height = universe.height();
 // Render loop for the game of life.
 let renderLoop;
 
-if (redner_options) {
+if (RENDER_OPTIONS === RenderOptions.Text) {
   const pre = document.getElementById("game-of-life-text");
   renderLoop = () => {
     pre.textContent = universe.render();
     universe.tick();
     requestAnimationFrame(renderLoop);
   };
-} else {
+} else if (RENDER_OPTIONS === RenderOptions.Canvas) {
   const CELL_SIZE = 5; // px
   const GRID_COLOR = "#ccc";
   const DEAD_COLOR = "#fff";
@@ -97,6 +97,8 @@ if (redner_options) {
   drawGrid();
   drawCells();
   requestAnimationFrame(renderLoop);
+} else {
+  console.error("Unknown render options");
 }
 
 requestAnimationFrame(renderLoop);
