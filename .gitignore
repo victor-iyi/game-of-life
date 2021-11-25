@@ -9,5 +9,6 @@ pkg/
 wasm-pack.log
 
 ## JS
+.bin/
 node_modules/
 dist/
