@@ -1,6 +1,13 @@
-/target
+## Rust
+target/
 **/*.rs.bk
 Cargo.lock
+
+## WASM
 bin/
 pkg/
 wasm-pack.log
+
+## JS
+node_modules/
+dist/
