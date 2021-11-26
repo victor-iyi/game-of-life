@@ -4,9 +4,11 @@ target/
 Cargo.lock
 
 ## WASM
+wasm-pack.log
 bin/
 pkg/
-wasm-pack.log
+!pkg/package.json
+!pkg/README.md
 
 ## JS
 .bin/
