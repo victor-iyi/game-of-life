@@ -13,6 +13,10 @@ configuration and observing how it evolves. It is [Turing complete] and can simu
 [Turing complete]: https://en.wikipedia.org/wiki/Turing_complete
 [Turing machine]: https://en.wikipedia.org/wiki/Turing_machine
 
+## Screenshot
+
+![Game of Life](./game-of-life.png)
+
 ## 🚴 Usage
 
 ### 🛠 Build with `wasm-pack build`

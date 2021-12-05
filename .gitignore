@@ -14,3 +14,7 @@ pkg/
 .bin/
 node_modules/
 dist/
+
+
+## MacOS
+.gitignore
